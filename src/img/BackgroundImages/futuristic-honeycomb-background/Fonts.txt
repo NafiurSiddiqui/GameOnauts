@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: De Valencia
+Author: Manuel Fernández del Campo García
+Url: https://www.fontsquirrel.com/fonts/de-valencia
+
+Font: Poppins
+Author: Indian Type Foundry
+Url: https://www.fontsquirrel.com/fonts/poppins

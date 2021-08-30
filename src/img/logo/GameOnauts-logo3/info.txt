@@ -1,0 +1,18 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: ostrich-regular
+font link: https://www.fontsquirrel.com/fonts/ostrich-sans
+font author: Tyler Finck
+font author site: https://www.tylerfinck.com
+
+
+icon designer: Alfredo @ IconsAlfredo.com
+icon designer link: /AlfredoCreates
+        
+
+fontColor: {"gradient-0":"#8EFF90","gradient-1":"#AB83EE"}
+bgColor: {"hex":"#000000"}
+iconColor: {"gradient-0":"#8EFF90","gradient-1":"#AB83EE"}
+
+      

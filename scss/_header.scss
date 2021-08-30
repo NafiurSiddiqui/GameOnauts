@@ -1,0 +1,139 @@
+@import "config";
+
+.header-main {
+  grid-area: head;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  height: 8em;
+  background-color: $primary-color;
+  position: relative;
+
+  &__logo-container {
+    // width: 16rem;
+    width: 11em;
+    // height: 10rem;
+    padding: 1em;
+    margin-left: 4em;
+    @include flexedCentered;
+    &__logo-icon {
+      height: 4em;
+    }
+    &__logo-text {
+      height: 2em;
+    }
+  }
+  &__search {
+    display: flex;
+    width: 60%;
+
+    border-radius: 5px;
+    border-top: 1px solid rgb(163, 162, 162);
+    border-bottom: 2px inset rgb(143, 143, 143);
+    border-left: 3px inset rgb(131, 131, 131);
+    border-right: 1px solid rgb(131, 131, 131);
+
+    // align-items: center;
+    &-field {
+      width: 90%;
+      // border-top: 1px solid rgb(163, 162, 162);
+      // border-bottom: 2px inset rgb(143, 143, 143);
+      // border-left: 3px inset rgb(131, 131, 131);
+      // border-right: 1px solid rgb(131, 131, 131);
+      // border-radius: 5px;
+      border: none;
+      padding: 0.4rem;
+      font-family: "Quantico", sans-serif;
+    }
+
+    &-btn {
+      // font-weight: 300;
+      // padding: 0.4rem;
+      border-radius: 0.2em;
+      padding: 0.3em 2em;
+      font-family: "Quantico", sans-serif;
+      background: linear-gradient(
+        180deg,
+        #f3f4f4 10.94%,
+        #b5b8b6 57.81%,
+        #f1efef 100%
+      );
+      &:hover {
+        background: linear-gradient(
+          180deg,
+          #d5d8d8 10.94%,
+          #676b69 57.81%,
+          #b3b0b0 100%
+        );
+        color: rgb(247, 244, 244);
+        font-size: 1.4em;
+        font-style: italic;
+        filter: drop-shadow(0 0 0.3rem #edf3f3);
+      }
+    }
+  }
+
+  &__nav {
+    width: 30rem;
+    margin-right: 4em;
+    &__list {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-right: 1em;
+      padding-left: 8px;
+      height: 100%;
+
+      &-item_btn {
+        padding: 0.4em;
+        font-family: "Quantico", sans-serif;
+        width: 8em;
+        &#sign-up {
+          border-radius: 0.5em;
+          margin-right: 0.5em;
+          background: linear-gradient(
+            180deg,
+            #05b8df 0%,
+            #2099a2 51.56%,
+            #0ae3d6 100%
+          );
+          &:hover {
+            background: linear-gradient(
+              180deg,
+              #05d1df 0%,
+              #137a88 51.56%,
+              #05b6a7 100%
+            );
+            filter: drop-shadow(0 0 0.3rem #52dce6);
+            color: whitesmoke;
+            font-size: 1.4em;
+            font-style: italic;
+          }
+        }
+        &#log-in {
+          border-radius: 0.5em 0 0.5em 0;
+          background: linear-gradient(
+            180deg,
+            #f3f4f4 10.94%,
+            #97a39d 57.81%,
+            #e6e4e4 100%
+          );
+          &:hover {
+            background: linear-gradient(
+              180deg,
+              #f4f5f5 10.94%,
+              #676b69 57.81%,
+              #b3b0b0 100%
+            );
+            color: whitesmoke;
+            font-size: 1.4em;
+            font-style: italic;
+            filter: drop-shadow(0 0 0.3rem #edf3f3);
+          }
+        }
+      }
+    }
+  }
+}

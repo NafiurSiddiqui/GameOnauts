@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sarpanch&display=swap");
+@import "base2";
+@import "header";
+@import "sidebar";
+@import "config";
+@import "variables";
+@import "cards";
+@import "resultContainer";
+@import "gameId";
+
+// @mixin pad($n: 10px) {
+//   padding: $n;
+// }
+// body {
+//   @include pad(65px);
+// }

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="gameonauts" content="gaming database" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="src/img/Icon.svg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="scss/main.scss" />
+    <!-- <script defer src="Js/controller.js"></script> -->
+    <!-- <script defer src="Js/cards.js"></script> -->
+    <!-- <script defer src="Js/cards2.js"></script> -->
+    <!-- <script defer src="Js/cards3.js"></script> -->
+    <script defer src="Js/cards4.js"></script>
+    <!-- <script defer src="Js/cards5.js"></script> -->
+    <!-- <script defer src="Js/pagination_2.js"></script> -->
+    <title>GameOnauts</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header-main">
+        <div class="header-main__logo-container">
+          <img
+            src="src/img/Icon.svg"
+            alt="Logo"
+            class="header-main__logo-container__logo-icon"
+          />
+          <img
+            src="src/img/gameonauts.svg"
+            alt="Logo"
+            class="header-main__logo-container__logo-text"
+          />
+        </div>
+        <form class="header-main__search">
+          <input
+            type="text"
+            class="header-main__search-field"
+            placeholder="surf in the massive gamebase"
+          />
+          <button class="header-main__search-btn">
+            <!-- <svg class="search__icon">
+                    <use href="src/img/icons.svg#icon-search"></use>
+                </svg> -->
+            <span class="header-main__search-btn-text">Search</span>
+          </button>
+        </form>
+
+        <nav class="header-main__nav">
+          <ul class="header-main__nav__list">
+            <li class="header-main__nav__list-item">
+              <button class="header-main__nav__list-item_btn" id="sign-up">
+                <span>Sign Up</span>
+              </button>
+            </li>
+            <li class="header-main__nav__list-item">
+              <button class="header-main__nav__list-item_btn" id="log-in">
+                <span>Log In</span>
+              </button>
+              <div class="header-main__nav-user-profile">
+                <!-- need to add the user profile here-->
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <aside class="sidebar">
+        <section class="sidebar__filter-container">
+          <label for="filter" id="filter-label">Filter by-</label>
+          <div class="sidebar__filter-container-bg">
+            <select name="filter" class="sidebar__filter-option">
+              <option value="years">--Years</option>
+              <option value="2020 to 2021">2020-2021</option>
+              <option value="2010 to 2019">2010-2019</option>
+              <option value="2000 to 2009">2000-2009</option>
+              <option value="1990 to 1999">1990-1999</option>
+              <option value="1980 to 1989">1980-1989</option>
+              <option value="1970 to 1979">1970-1979</option>
+              <option value="1960 to 1969">1960-1969</option>
+              <option value="1950 to 1959">1950-1959</option>
+            </select>
+
+            <select name="filter" class="sidebar__filter-option">
+              <option value="">--Decades</option>
+              <option value="">2020</option>
+              <option value="">2010</option>
+              <option value="">2000</option>
+              <option value="">1990</option>
+              <option value="">1980</option>
+              <option value="">1970</option>
+              <option value="">1960</option>
+              <option value="">1950</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="sidebar__browseby-container">
+          <span class="sidebar__browseby-container-heading">Browse By -</span>
+          <pre class="sidebar__browseby-container_btns">
+                <button class="sidebar__browseby-container_btns-btn">Games</button>     
+                <button class="sidebar__browseby-container_btns-btn">Genre</button>
+                <button class="sidebar__browseby-container_btns-btn">Tags</button>
+                <button class="sidebar__browseby-container_btns-btn">Platforms</button>
+                <button class="sidebar__browseby-container_btns-btn">Publisher</button>
+                <button class="sidebar__browseby-container_btns-btn">Store</button>
+                </pre>
+        </section>
+
+        <footer class="copyright">
+          <div class="copyright-container">
+            <p>
+              <span class="copyright-symbol"> &copy; </span> Copyright by
+              <a class="twitter-link" target="_blank" href="#"> Code_on_jim</a>
+            </p>
+          </div>
+        </footer>
+      </aside>
+
+      <main class="display">
+        <!-- <h1 class="landing_message">
+           <span id="landing_message-browse">Browse</span>  <span id="landing_message-on"> On </span>
+        </h1> -->
+
+        <div class="spinnerContainer" aria-label="Loading Spinner">
+          <img
+            src="./src/svg/mySpinner.svg"
+            alt="loading spinner"
+            id="spinner"
+            hidden
+          />`;
+        </div>
+
+        <!-- <div class="error_message">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <p>Error</p>
+        </div> -->
+
+        <!-- <div class="message">
+          <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+        </div> -->
+
+        <!-- card 1 -->
+        <div class="game__container" id="empty_container">
+          <a href="javascript:;" class="game__container_game-link"></a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

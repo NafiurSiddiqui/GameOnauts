@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
+
+@mixin centeredColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexedCentered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin centeredSpaceEven {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@mixin centeredSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin centeredSpaceAround {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

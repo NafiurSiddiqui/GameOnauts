@@ -1,0 +1,153 @@
+@import "config";
+@import "variables";
+
+$sidebarMenuBorder: rgba(9, 53, 75, 0.89);
+$sidebarMenuColor: rgba(32, 71, 90, 0.89);
+$sideBarLightOverDark: whitesmoke;
+
+.sidebar {
+  // border: 1px solid black;
+  // background-color: $tertiary-color;
+  background-color: rgba(2, 14, 20, 0.89);
+  position: relative;
+  font-family: "Quantico", sans-serif;
+
+  > section {
+    // background-color: $quaternery-color;
+    background-color: $sidebarMenuColor;
+    border-radius: 0.3em;
+  }
+  &__filter-container {
+    @include flexedCentered;
+    flex-direction: column;
+    background: linear-gradient(158.06deg, #234d62 25.06%, #0e5375 99.17%);
+    #filter-label {
+      // border: 1px solid green;
+      width: 90%;
+    }
+    &-bg {
+      border: 2px solid $sidebarMenuBorder;
+      // height: 12.75em;
+      width: 90%;
+      @include centeredSpaceBetween;
+      padding: 2em;
+      background: linear-gradient(
+        172.42deg,
+        #080808 16.88%,
+        rgba(34, 32, 32, 0.89) 94.13%
+      );
+      box-shadow: inset -2px -1px 4px -2px rgba(128, 127, 127, 0.49);
+      border-radius: 0.3em;
+    }
+    label {
+      font-size: 1.5em;
+      font-weight: 500;
+      color: whitesmoke;
+      letter-spacing: 0.1em;
+      // justify-content: flex-start;
+      margin-bottom: 0.4em;
+    }
+  }
+
+  &__filter-option {
+    background-color: $color-grey-light-1;
+    border: 2px solid black;
+    color: rgb(34, 33, 33);
+    font-family: "Quantico", sans-serif;
+    padding: 0;
+  }
+
+  &__browseby-container {
+    // border: 2px solid $sidebarMenuBorder;
+    background: linear-gradient(158.06deg, #234d62 25.06%, #0c6c9b 99.17%);
+    position: relative;
+    @include centeredColumn;
+    &-heading {
+      // background-color: lawngreen;
+      // border-radius: 0.3em;
+      width: 90%;
+      color: $sideBarLightOverDark;
+      letter-spacing: 0.1em;
+      font-size: 1.5em;
+      margin-bottom: 0.3em;
+    }
+    &_btns {
+      // background-color: #0b0a0a;
+      background: linear-gradient(
+        172.42deg,
+        #000000 16.88%,
+        rgba(11, 10, 10, 0.89) 94.13%
+      );
+      box-shadow: inset -4px -2px 4px -2px rgba(128, 127, 127, 0.49);
+      border-radius: 0.3em;
+      // @include centeredSpaceBetween;
+      @include centeredSpaceAround;
+      // @include centeredColumn;
+      flex-direction: column;
+      width: 90%;
+      height: 90%;
+      padding: 1em 0;
+
+      &-btn {
+        padding: 0.6em 1em;
+        width: 90%;
+        // border-radius: 0.3em;
+        font-family: "Quantico", sans-serif;
+        // background-color: $color-grey-light-1;
+        background: linear-gradient(
+          180deg,
+          rgba(43, 42, 42, 0.51) 0%,
+          #000000 52.08%,
+          #212121 100%
+        );
+        color: $sideBarLightOverDark;
+        transition: 300ms ease-in-out;
+        &:hover {
+          background: linear-gradient(
+            180deg,
+            rgba(172, 170, 170, 0.51) 0%,
+            #313030 52.08%,
+            #464646 100%
+          );
+          filter: drop-shadow(0 0 0.8rem rgba(20, 100, 220, 0.397));
+          letter-spacing: 0.8em;
+          font-style: italic;
+          font-size: 1.4em;
+          font-weight: 800;
+          color: rgba(12, 130, 226, 0.993);
+        }
+      }
+    }
+  }
+
+  .copyright {
+    background-color: $sidebarMenuColor;
+    position: absolute;
+    bottom: 0;
+    height: 20em;
+    width: 100%;
+
+    &-container {
+      @include flexedCentered;
+      // border: 2px solid black;
+      width: 100%;
+
+      position: relative;
+      // margin: 0 auto;
+      top: 10%;
+      p {
+        color: $sideBarLightOverDark;
+        // border: 1px solid black;
+        // height: 2em;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        // width: 100%;
+      }
+    }
+    &-symbol {
+      // color: black;
+      font-size: 1.3em;
+    }
+  }
+}

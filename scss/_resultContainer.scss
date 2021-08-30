@@ -1,0 +1,60 @@
+main {
+  position: relative;
+  //   background: url("../src/img/BackgroundImages/blue-copy-space-digital-background/4882066.jpg");
+  //   background: url("../src/img/BackgroundImages/copy-space-futuristic-gradient-geometric-background/4912487.jpg");
+  //   background: url("../src/img/BackgroundImages/digial-circuit-diagram-technology-background/19187755.jpg");
+  background: url("../src/img/BackgroundImages/futuristic-honeycomb-background/2841153.jpg");
+  //   background: url("../src/img/BackgroundImages/neon-light-frame/91664.jpg");
+  background-size: cover;
+  background-color: rgb(29, 112, 112);
+  overflow-y: scroll;
+}
+
+.btn--inline {
+  font-size: 6em;
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+  @include flexedCentered;
+  position: sticky;
+  z-index: 20;
+  background-color: rgba(167, 163, 163, 0.1);
+  &:hover {
+    background-color: rgba(201, 201, 201, 0.7);
+  }
+
+  i {
+    padding: 0.2em;
+    border-radius: 40%;
+  }
+}
+
+#next {
+  position: absolute;
+  right: 0;
+  // top: calc(100vh / 2);
+  bottom: 10%;
+  margin-right: 0.2em;
+}
+
+#prev {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  margin-left: 0.2em;
+}
+
+.pagination-guard {
+  height: 14em;
+  width: 14em;
+  background-color: rgba(250, 235, 215, 0.075);
+  @include flexedCentered;
+  position: relative;
+  z-index: 10;
+}
+
+.landing_message {
+  font-size: 8rem;
+  font-style: italic;
+  font-family: "Quantico", sans-serif;
+}

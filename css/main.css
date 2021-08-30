@@ -1,0 +1,567 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sarpanch&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html a {
+  text-decoration: none;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.container {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10em 10em;
+      grid-template-rows: 10em 10em;
+  -ms-grid-columns: 30em 3fr;
+      grid-template-columns: 30em 3fr;
+      grid-template-areas: "head head" "browseBy resultCards";
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: head;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 15em 2fr 1fr;
+      grid-template-rows: 15em 2fr 1fr;
+  height: 100vh;
+  grid-gap: 1em;
+  padding: 1.5em;
+}
+
+main {
+  padding: 2em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1em;
+  grid-auto-rows: minmax(395px, auto);
+  height: 100vh;
+  background-color: #1b1d1d;
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: head;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid black;
+  background-color: black;
+  position: relative;
+}
+
+.header__logo-container {
+  width: 11em;
+  padding: 1em;
+  margin-left: 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo-container__logo-icon {
+  height: 4em;
+}
+
+.header__logo-container__logo-text {
+  height: 2em;
+}
+
+.header__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  border-radius: 5px;
+  border-top: 1px solid #a3a2a2;
+  border-bottom: 2px inset #8f8f8f;
+  border-left: 3px inset #838383;
+  border-right: 1px solid #838383;
+}
+
+.header__search-field {
+  width: 90%;
+  border: none;
+  padding: 0.4rem;
+  font-family: "Quantico", sans-serif;
+}
+
+.header__search-btn {
+  border-radius: 0.2em;
+  padding: 0.3em 2em;
+  font-family: "Quantico", sans-serif;
+}
+
+.header .header__nav {
+  width: 30rem;
+  margin-right: 4em;
+}
+
+.header .header__nav_list {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 1em;
+  padding-left: 8px;
+  height: 100%;
+}
+
+.header .header__nav_list .header__nav__list-item_btn {
+  padding: 0.4em;
+  font-family: "Quantico", sans-serif;
+  width: 8em;
+}
+
+.header .header__nav_list .header__nav__list-item_btn#sign-up {
+  border-radius: 0.5em;
+  margin-right: 0.5em;
+  background-color: #05b8df;
+}
+
+.header .header__nav_list .header__nav__list-item_btn#log-in {
+  border-radius: 0.5em 0 0.5em 0;
+}
+
+.sidebar {
+  border: 1px solid black;
+  background-color: #524f4f;
+  position: relative;
+  font-family: "Quantico", sans-serif;
+}
+
+.sidebar > section {
+  background-color: #c0bdbd;
+  border-radius: 0.3em;
+}
+
+.sidebar__filter-container {
+  border: 2px solid #969595;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2em;
+}
+
+.sidebar__filter-container label {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.sidebar__filter-option {
+  background-color: #f9f5f3;
+  border: 2px solid black;
+  color: #222121;
+  font-family: "Quantico", sans-serif;
+}
+
+.sidebar__browseby-container {
+  border: 2px solid #969595;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar__browseby-container-heading {
+  width: 90%;
+}
+
+.sidebar__browseby-container_btns {
+  background-color: #0b0a0a;
+  border-radius: 0.3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  height: 90%;
+  padding: 1em 0;
+}
+
+.sidebar__browseby-container_btns-btn {
+  padding: 0.6em 1em;
+  width: 70%;
+  border-radius: 10px;
+  font-family: "Quantico", sans-serif;
+  background-color: #f9f5f3;
+}
+
+.sidebar footer {
+  background-color: #c0bdbd;
+  position: absolute;
+  bottom: 0;
+  height: 24%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sidebar footer p {
+  position: relative;
+  margin: 0 auto;
+  top: 10%;
+}
+
+.game__container {
+  width: 293px;
+  height: 395px;
+  overflow-y: hidden;
+  position: relative;
+  font-family: "Rajdhani", sans-serif;
+  -webkit-box-shadow: 18px 4px 1px 4px rgba(0, 0, 0, 0.25) inset;
+          box-shadow: 18px 4px 1px 4px rgba(0, 0, 0, 0.25) inset;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.game__container > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.game__container__overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
+  /*To create a transition effect, you must specify two things:
+    the CSS property you want to add an effect to
+    the duration of the effect*/
+  -webkit-transform: translate3d(0, 79%, 0);
+          transform: translate3d(0, 79%, 0);
+  background-color: rgba(211, 211, 211, 0.2);
+  border: 1px solid #2b2a2a;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  -webkit-box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.25) inset;
+          box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.25) inset;
+}
+
+.game__container__overlay_heading-container {
+  padding: 0.8rem;
+  height: 8em;
+}
+
+.game__container__overlay_heading-container h4 {
+  margin: 0;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  font-size: 4rem;
+  color: #fcf807;
+  text-align: center;
+  text-shadow: 3px 3px 0px #070707;
+  font-family: "Sarpanch", sans-serif;
+}
+
+.game__container__overlay_heading-container hr {
+  height: 4px;
+  background-color: black;
+  border: none;
+  display: none;
+}
+
+.game__container__overlay-info-container {
+  padding: 1rem;
+  width: 96%;
+  margin: 0 auto;
+  -webkit-backdrop-filter: blur(34px);
+          backdrop-filter: blur(34px);
+  -webkit-transition: opacity 600s, -webkit-transform 100ms;
+  transition: opacity 600s, -webkit-transform 100ms;
+  transition: opacity 600s, transform 100ms;
+  transition: opacity 600s, transform 100ms, -webkit-transform 100ms;
+  border: 0.2px solid #464545;
+  border-radius: 4px;
+  height: 60%;
+  font-size: 1.5em;
+  line-height: 1.7;
+}
+
+.game__container__overlay .game__votingbar-container {
+  height: 9em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.game__container__overlay .game__votingbar-container-bar {
+  border: 1px solid #868584;
+  border-radius: 10em;
+  text-align: center;
+  position: relative;
+  color: white;
+  background-color: #0f0f0f;
+}
+
+.game__container__overlay .game__votingbar-container-bar-text-exceptional {
+  letter-spacing: 0.7em;
+  position: fixed;
+  left: 15%;
+  z-index: 20;
+}
+
+.game__container__overlay .game__votingbar-container-bar-text-recommended {
+  letter-spacing: 0.7em;
+  position: fixed;
+  left: 15%;
+  z-index: 20;
+}
+
+.game__container__overlay .game__votingbar-container-bar-text-not-bad {
+  letter-spacing: 0.3em;
+  z-index: 20;
+  position: fixed;
+  left: 35%;
+}
+
+.game__container__overlay .game__votingbar-container-bar-text-dont-bother {
+  letter-spacing: 0.3em;
+  z-index: 20;
+  position: fixed;
+  left: 25%;
+}
+
+.game__container__overlay .game__votingbar-container-bar-color {
+  background-color: #1ab81a;
+  height: 27px;
+  position: relative;
+  z-index: 10;
+  border-radius: 10em 0 0 10em;
+  width: 50%;
+  text-align: center;
+}
+
+.game__container__overlay .game__votingbar-container-bar-rate-container {
+  width: 2.5em;
+  height: 2.1em;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: rgba(179, 238, 168, 0.863);
+  color: black;
+  position: absolute;
+  z-index: 40;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: -0.5em;
+  top: -0.4em;
+  display: none;
+}
+
+.game__container__overlay-platforms-icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 8em;
+}
+
+.game__container__overlay-platforms-icon-container-platforms {
+  background-color: black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.7em;
+}
+
+.game__container__overlay-platforms-icon-container-platforms img {
+  width: 40px;
+  height: 30px;
+  -webkit-filter: sepia(100%) invert(100%) brightness(200%);
+          filter: sepia(100%) invert(100%) brightness(200%);
+}
+
+.game__container a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.game__container a:hover ~ .game__container__overlay, .game__container a:focus ~ .game__container__overlay {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.game__container a:hover ~ .game__container__overlay-game-title, .game__container a:focus ~ .game__container__overlay-game-title {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.game__container a:hover ~ .game__container__overlay hr, .game__container a:focus ~ .game__container__overlay hr {
+  display: block;
+}
+
+.game__container a:hover ~ .game__container__overlay-info-container, .game__container a:focus ~ .game__container__overlay-info-container {
+  opacity: 1;
+}
+
+.game__container a:hover ~ .game__container__overlay .game__votingbar-container-bar-rate-container, .game__container a:focus ~ .game__container__overlay .game__votingbar-container-bar-rate-container {
+  display: inline-block;
+}
+
+main {
+  background: url("../src/img/BackgroundImages/futuristic-honeycomb-background/2841153.jpg");
+  background-size: cover;
+}
+/*# sourceMappingURL=main.css.map */
