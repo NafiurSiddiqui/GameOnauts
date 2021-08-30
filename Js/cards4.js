@@ -177,24 +177,23 @@ const showGame = async function(){
 
 gameContainer.insertAdjacentHTML('afterbegin',markUp);
 
+// for (let i = 0; i < cardContainer.length; i++) {
+//   cardContainer[i].addEventListener('click',(e)=>{
+//     console.log('ok!',e.target.parentNode.dataset.id);
+//   })}
 for (let i = 0; i < cardContainer.length; i++) {
   cardContainer[i].addEventListener('click',(e)=>{
     console.log('ok!',e.target.parentNode.dataset.id);
+
+    let dataID =e.target.parentNode.dataset.id;
+    fetchGameID(dataID);
+
   })}
-
-
-
-
     } catch(err){
 console.log(err);
     }};
 
 showGame();
-
-
-
-
-
 
 
 
