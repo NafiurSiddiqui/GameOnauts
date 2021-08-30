@@ -10,19 +10,20 @@ import amiga from '../src/svg/platformLogo/amiga.svg';
 import atari from '../src/svg/platformLogo/atari.svg';
 import moar from '../src/svg/platformLogo/more.svg';
 import 'regenerator-runtime/runtime';
-import { API_URL } from './config';
+import { API_URL , KEY} from './config';
 
-
-
-
-const KEY = 'f38648acb2984a71a947721775c317e6';
-const url = `https://api.rawg.io/api/`
+// const KEY = 'f38648acb2984a71a947721775c317e6';
+// const url = `https://api.rawg.io/api/`
 
 const gameContainer = document.querySelector('.display');
 const spinnerContainer =document.getElementById('spinner');
 const emptyCardContainer = document.getElementById('empty_container');
-const cardContainer = document.querySelector('.game__container');
-console.log(cardContainer);
+let cardContainer = document.getElementsByClassName('game__container_game-link');
+let gameCardContainer = document.querySelector('.game__container');
+console.log( cardContainer);
+
+
+
 function renderMore(){
  return moar;
 }
@@ -30,43 +31,41 @@ function renderMore(){
  function clear() {
     gameContainer.innerHTML = '';
   }
-  //   // console.log(gameContainer);
-  
-  // }
+
 
   function renderSpinner() {
       spinnerContainer.removeAttribute('hidden');
   }
-  // renderSpinner();
+
   function removeSpinner(){
     spinnerContainer.setAttribute('hidden','');
   };
-  // removeSpinner();
+
+  removeSpinner();
   function removeEmptyDiv(){
     emptyCardContainer.setAttribute('hidden','');
   };
 
 let gameId = [];
-console.log(gameId);
+
 
 const showGame = async function(){ 
     try{
- 
-        //1.render spinner
-        renderSpinner()
-        
-        //2.add gameCards class to the container
-        gameContainer.classList.add('gameCards');
-        
-        //3.Ajax call
-        const response = await fetch(`${url}games?key=${KEY}`);
+     ;
+      //1.render spinner
+      renderSpinner()
+
+      //2.add gameCards class to the container
+      gameContainer.classList.add('gameCards');
+
+      //3.Ajax call
+        const response = await fetch(`${API_URL}games?key=${KEY}`);
         const data = await response.json();
-        
         //4.clear spinner
-         removeSpinner();
-         
+        //  removeSpinner();
+        clear();
          //5.clear empty card div
-         removeEmptyDiv();
+        //  removeEmptyDiv();
         if(!response.ok) throw new Error(`${data.message}`)
         console.log(response,data);
 
@@ -74,6 +73,7 @@ const showGame = async function(){
 
         const markUp = results.map((game) =>{
         let id = game.id;
+        // console.log(id);
         gameId.push(id);
         let barExceptional = Math.trunc(game.ratings[0].percent);
         let barRecommended = Math.trunc(game.ratings[1].percent);
@@ -85,16 +85,16 @@ const showGame = async function(){
             return platformName;
         });
 
-            return  `
-            <div class="game__container">
-                <a href='https://${fetchGameID(id)}'class="game__container_game-link"></a>
-                <img src=${game.background_image} alt="Game Image" class="game__container--game-image">
-                <div class="game__container__overlay  aria-hidden="true"">
-                <div class="game__container__overlay_heading-container">
-                    <h4 class="game__container__overlay_game-title">${game.name}</h4>
-                    <hr>
-                </div> 
-                
+    return ` 
+    <div class="game__container" data-id="${id}">
+          <a href="javascript:;" class="game__container_game-link" ></a> 
+        <img src=${game.background_image} alt="Game Image" class="game__container--game-image">
+        <div class="game__container__overlay  aria-hidden="true"">
+        <div class="game__container__overlay_heading-container">
+            <h4 class="game__container__overlay_game-title">${game.name}</h4>
+            <hr>
+        </div> 
+        
             <div class="game__container__overlay-info-container">
                     <span class="game__overlay-info-container-headings">Genre:</span>
                     <span class="game__overlay-info-container-headings-info-genre">${game.genres.map(genName =>{
@@ -164,25 +164,39 @@ const showGame = async function(){
           </ul> 
         </div>
    </div>
-`
+    `;
+
+// const range = document.createRange();
+// let frag = range.createContextualFragment(text);
+// gameContainer.appendChild(frag);
+//  const selectNode = document.querySelectorAll('.game__container_game-link');
+
+
 }).join('')
 
-  gameContainer.insertAdjacentHTML('afterbegin',markUp);
-  
+gameContainer.insertAdjacentHTML('afterbegin',markUp);
+
+// for (let i = 0; i < cardContainer.length; i++) {
+//   cardContainer[i].addEventListener('click',(e)=>{
+//     console.log('ok!',e.target.parentNode.dataset.id);
+//   })}
+for (let i = 0; i < cardContainer.length; i++) {
+  cardContainer[i].addEventListener('click',(e)=>{
+    console.log('ok!',e.target.parentNode.dataset.id);
+
+    let dataID =e.target.parentNode.dataset.id;
+    fetchGameID(dataID);
+
+  })}
     } catch(err){
 console.log(err);
     }};
 
-showGame();
-
-// gameContainer.addEventListener('click',function(){fetchGameID(gameId[0])})
+// showGame();
 
 
 const fetchGameID = async function(id){ 
     try{
-
-      //1.clear content
-      clear();
       //2.render spinner
       renderSpinner()
       //3.remove gameCards class to the gameContainer
@@ -191,7 +205,7 @@ const fetchGameID = async function(id){
       gameContainer.classList.add('gameId');
       //4.AJAX call
       
-        const response = await fetch(`${url}games/${id}?key=${KEY}`);
+        const response = await fetch(`${API_URL}games/${id}?key=${KEY}`);
         const data = await response.json();
         if(!response.ok) throw new Error(`${data.message}`)
         console.log(data);
@@ -206,8 +220,8 @@ const fetchGameID = async function(id){
         console.log(parentPlatform);
         let storeName = data.stores.map(store=> store.store.name);
         let storeDomain = data.stores.map(domain=> domain.store.domain);
-        console.log(storeName);
-        console.log(storeDomain[0]);
+        // console.log(storeName);
+        // console.log(storeDomain[0]);
         const markup = `
             <header id="gamePage_header">
           <div id="image-container">
@@ -387,53 +401,9 @@ const fetchGameID = async function(id){
 console.log(err);
     }};
 
-// fetchGameID(3498);
 
 
 
 
 
-    //  <img src="./src/svg/platformLogo/playstation.svg" alt="" />
 
-// const data = ['a','b','c','d'];
-
-// console.log(data);
-
-// function renderStore(data){
-    
-//   data.forEach(element => {
-     
-//     const storeContainer = document.createElement('div');
-//     storeContainer.classList.add('fourthrow-container-image-container-content');
-//     storeContainer.innerHTML = `
-//     <h1>${element}</h1>
-    
-//     `
-//     const frag =document.createRange().createContextualFragment(`<div class="fourthrow-container-image-container-content">
-// </div> `);
-//     frag.appendChild(storeContainer);
-//     // return storeContainer;
-//   });         
-// };
-
-
-// function renderStore(data){
-//   const frag =document.createRange().createContextualFragment(`<div class="fourthrow-container-image-container-content">
-// </div> `);
-// // let storeBox =frag.querySelector('.fourthrow-container-image-container-content');
-// // console.log(storeBox);
-// data.forEach(element => {
-//   const el = document.createElement('h1');
-//     el.innerHTML = `${element}`;
-//     return frag.appendChild(el);
-    
-//   });         
-// };
-
-// console.log(renderStore(data));
-
-// function platformCheck(data){
-//   if(data[0].includes('pc')) return pc;
-//   if(data[1].includes('playstation')) return  ps;
-//   if(data[2].includes('xbox')) return xbox;
-// }

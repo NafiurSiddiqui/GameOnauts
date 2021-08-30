@@ -25,18 +25,17 @@ let pageNumberNext = 2;
 let curPage = null;
 let pageNumberPrev = null;
 
-window.addEventListener('load',()=>{
-  if(pageNumberPrev === null){
-    prevBtn.style.display = 'none';
-  }
-  // if(pageNumberNext > 2){
-  //   prevBtn.style.display = 'flex';
-  // }
-})
+// window.addEventListener('load',()=>{
+//   if(pageNumberPrev === null){
+//     prevBtn.style.display = 'none';
+//   }
+//   // if(pageNumberNext > 2){
+//   //   prevBtn.style.display = 'flex';
+//   // }
+// })
 
 const state = {
   game: {},
-  pagination:{},
   search: {
     query: '',
     results: [],
@@ -245,9 +244,9 @@ function raisePageNum(){
    })
 };
 
-raisePageNum();
+// raisePageNum();
 
-//pagination
+
 
 const AJAXpagination2 = async function () {
   try {
